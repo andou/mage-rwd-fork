@@ -45,6 +45,15 @@ table {
 button {
   outline: none; }
 
+.breadcrumbs {
+  font-family: "Museo Sans W01 300"; }
+  .breadcrumbs:lang(ru-RU) {
+    font-family: "Arial";
+    font-weight: 300; }
+  .breadcrumbs:lang(ja) {
+    font-family: sans-serif;
+    font-weight: 300; }
+
 .catalog-category-view .category-title h1 {
   font-family: "Museo Sans W01 500"; }
   .catalog-category-view .category-title h1:lang(ru-RU) {
@@ -120,6 +129,17 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
 
+.breadcrumbs {
+  margin: 0;
+  background: #005187;
+  color: #fff;
+  padding: 15px; }
+  .breadcrumbs a {
+    color: #fff;
+    text-decoration: underline; }
+  .breadcrumbs strong {
+    color: #fff; }
+
 .catalog-category-view .col3-layout .col-right {
   display: none; }
 .catalog-category-view .col3-layout .col-wrapper {
@@ -147,4 +167,15 @@ body {
     float: left;
     line-height: 130px;
     position: absolute;
-    left: 0; }
+    left: 0;
+    padding-left: 15px; }
+.catalog-category-view .toolbar {
+  margin: 0;
+  border: 0;
+  background: #EFEFEF;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  color: #363636; }
+  .catalog-category-view .toolbar .sorter > .sort-by .sort-by-switcher, .catalog-category-view .toolbar .sorter > .view-mode .grid, .catalog-category-view .toolbar .sorter > .view-mode .list {
+    vertical-align: middle; }
