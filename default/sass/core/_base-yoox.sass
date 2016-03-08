@@ -1,0 +1,21 @@
+// *************************************
+//
+//   Base
+//   -> Base-level tags (body, p, etc.)
+//
+// *************************************
+
+.responsiveImage img
+	width: 100%
+	display: block
+
+
+.wrapContent
+	margin: 0 auto
+	background-color: #252525
+	+breakpoint($m)
+
+		padding-left: rem(32px)
+		padding-right: rem(32px)
+		#wrapper.b-experience
+			+border-box-sizing

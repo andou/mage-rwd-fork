@@ -1,0 +1,38 @@
+// *************************************
+//
+//   Base
+//   -> Base-level tags (body, p, etc.)
+//
+// *************************************
+
+html
+	background: #252525
+
+body
+	background: #252525
+
+.responsiveImage img
+	width: 100%
+	display: block
+	position: relative
+
+
+.wrapContent
+	margin: 0 auto
+	background-color: #252525
+	min-width: 320px
+	position: relative
+	+breakpoint($m)
+		max-width: 1216px
+		padding-left: rem(32px)
+		padding-right: rem(32px)
+
+#wrapper.b-experience
+	+border-box-sizing
+	color: $base-color
+	font-family: $base-fontFamily
+	font-size: $base-fontSize
+	line-height: $base-lineHeight
+	-webkit-font-smoothing: antialiased
+	position: relative
+	z-index: 1

@@ -1,0 +1,69 @@
+.elasticProducts
+	font-size: 0
+	white-space: nowrap
+	overflow: hidden
+	background: #fff
+.elasticWrap--temp
+	position: relative
+.elasticProducts__item
+	backface-visibility: hidden
+	display: inline-block
+	height: 100%
+	width: 250px
+	position: relative
+	transition: transform 600ms ease-in-out
+	background: #EDECEA
+	+breakpoint($m)
+		margin-top: 10%
+	+breakpoint($l)
+		margin-top: 0
+	img
+		width: 100%
+	@for $i from 0 through 20
+		&:nth-child(#{$i})
+			transition-delay: ($i*50ms)
+	&.reverse
+		$j : 20
+		@for $i from 0 through 20
+			&:nth-child(#{$j - $i})
+				transition-delay: ($i*30ms)
+
+	.brick__textContainer--center
+		transition: all 600ms $ease-in-out-quad
+		opacity: 0
+
+	&:hover
+		.brick__textContainer--center
+			opacity: 1
+
+.es--nav
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 9
+	>div
+		transition: all 600ms $ease-in-out-quad
+		background: #333
+		+vertical-center
+		text-align: center
+		width: 40px
+		height: 40px
+		cursor: pointer
+		&:hover
+			background: #000
+		svg
+			vertical-align: middle
+			display: inline-block
+			width: 30px
+			path
+				fill: #FFF
+		&.disabled
+			cursor: default
+			opacity: 0.1
+			svg
+				path
+					fill: #ddd
+
+	.es--prev
+	.es--nect
+

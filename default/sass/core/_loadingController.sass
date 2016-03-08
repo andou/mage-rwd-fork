@@ -1,0 +1,15 @@
+.js-check-loading
+	.brick__image
+		.respond-image > img
+			transition: opacity .4s ease, transform 300ms ease-in-out, bottom 300ms ease-in-out
+			opacity: 0
+			opacity: 1
+	.brick__textContainer, .brick__textContainer--center, .xmasNumber, .iconWrapper, .xmasNotify
+		transition: opacity .5s ease .2s, transform 300ms ease-in-out, bottom 300ms ease-in-out
+		opacity: 0
+		opacity: 1
+	&.js-all-loaded
+		.brick__image, .brick__textContainer, .brick__textContainer--center, .xmasNumber, .iconWrapper, .xmasNotify
+			opacity: 1
+			.respond-image > img
+				opacity: 1

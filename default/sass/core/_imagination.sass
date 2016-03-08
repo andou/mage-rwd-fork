@@ -1,0 +1,61 @@
+.respond-image
+	height: 100%
+	position: relative
+	transition: opacity .8s ease-in
+	&.respond-image__loading
+		.respond-image__loader
+			opacity: 1
+			visibility: visible
+	img
+		width: 100%
+		height: auto
+		.napa-catalog-wrap &
+			height: 100%
+		display: none
+		position: relative
+		+breakpoint ($m)
+		+breakpoint ($m $l)
+		&.small
+			display: block
+			+breakpoint ($m)
+				display: none
+		&.medium
+			+breakpoint ($m $l)
+				display: block
+		&.large
+			.no-mediaqueries &
+				display: block
+			+breakpoint ($l)
+				display: block
+
+	//Ar: modifier for full height image. Used in rowType37
+	&--fullHeight
+		+breakpoint($m)
+			img
+				width: auto
+				height: 100%
+
+		&--fRight
+			+breakpoint($m)
+				img
+					width: auto
+					height: 100%
+					float: right
+
+
+
+.respond-image__loader
+	height: 100%
+	width: 100%
+	opacity: 1
+	@include position( absolute, 0 0 0 0 )
+	text-align: center
+	vertical-align: middle
+	+vertical-center
+	visibility: hidden
+	opacity: 0
+	transition: 1000ms $ease-in-out-cubic
+	img
+		width: 50px
+		+inline-block
+		vertical-align: middle

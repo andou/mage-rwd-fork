@@ -1,0 +1,222 @@
+// ----- Btn Size ----- //
+
+%btnSizeW
+	width: 40px
+	.deviceMobile &
+		width: 50px
+
+
+%btnSizeH
+	height: 40px
+	line-height: 40px
+	.deviceMobile &
+		height: 50px
+		line-height: 50px
+
+
+
+.sn--container
+	overflow: hidden
+	@extend %clearfix
+	position: relative
+	height: 100%
+	transform: translate3d(0,0,0)
+	width: 100%
+	#napa-catalog-wrap &
+		position: relative
+
+	+breakpoint($m)
+		position: relative
+
+
+.sn--wrapper
+	@extend %clearfix
+	//transition: all 800ms $ease-in-out-expo
+	transition: all 600ms $ease-in-out-quad
+	&.no-transition
+		transition: none
+	backface-visibility: hidden
+	height: 100%
+.sn--item
+	float: left
+	z-index: 50
+	height: 100%
+	position: relative
+	&.brick--slide
+		+vertical-center
+.sn--navigation
+	position: absolute
+	right: 0
+	top: 0
+	width: 81px
+	.deviceMobile &
+		width: 101px
+
+	@extend %btnSizeH
+	z-index: 99
+.sn--navigation__link
+	position: absolute
+	background: $napaRed
+	@extend %btnSizeW
+	@extend %btnSizeH
+	cursor: pointer
+	text-align: center
+	&:hover
+		background: $napaBlack
+	&.next
+		right: 0
+	&.prev
+		left: 0
+		margin-right: 1px
+	span
+		display: block
+		+vertical-center
+		height: 100%
+		width: 100%
+		svg
+			vertical-align: middle
+			width: 15px
+			height: 15px
+			display: inline-block
+			path,polygon
+				fill: $napaWhite
+	.deviceMobile &
+		&:hover
+			background: $napaRed
+			
+.sn--dots
+	position: absolute
+	top: auto
+	bottom: 0px
+	height: 50px
+	text-align: center
+	width: 100%
+	+vertical-center
+
+.sn--dots__item
+	@include inline-block
+	vertical-align: middle
+	margin: 0 20px
+	width: 15px
+	height: 15px
+	border-radius: 50%
+	// background: url(../img/dot.png) no-repeat top left
+	border: 4px solid #fff
+	background: transparent
+	z-index: 90
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		height: 100%
+		border-radius: 10px
+		width: 100%
+		top: 0
+		left: 0
+		display: block
+		opacity: 0
+		transform: scale(0)
+		transition: 300ms all ease
+		background: #FFF
+	&.active
+		background: #fff
+	&:hover
+		cursor: pointer
+		&:after
+			transform: scale(1)
+			opacity: 1
+			transition: 300ms all ease
+	.deviceMobile &
+		&:after
+			transform: scale(0)
+			opacity: 0
+
+
+
+//fix for Big Text slider
+
+.sn__bigText
+	top: 0
+	.sn--item
+		padding-top: 5%
+
+
+.sn--counter
+	display: none
+
+	+breakpoint($m)
+		display: block
+		position: absolute
+		background: $napaBlack
+		height: 81px
+		width: 81px
+		text-align: center
+		z-index: 99
+		top: 41px
+		right: 0
+		background: #222
+		padding: 3px
+		+vertical-center
+
+	.deviceMobile &
+		height: 101px
+		width: 101px
+		top: 51px
+
+	div
+		width: 98%
+		display: inline-block
+		vertical-align: middle
+
+	&:hover
+		background: #000
+	span
+		color: #fff
+		font-size: rem(12px)
+		line-height: normal
+		vertical-align: middle
+		width: 98%
+		margin: 0 auto
+		display: inline-block
+
+		&.sn--counter__desc
+			@extend %font-serif-bold
+			font-size: rem(14px)
+			text-transform: uppercase
+
+/**loop slider**/
+.ls__item
+	display: inline-block
+	white-space: normal
+	.canvasHead__textContainer
+		.canvasHead__textContainerAux
+			display: none
+			.js-all-loaded &
+				display: inline-block
+	
+.ls__controller
+	display: block
+	position: absolute
+	z-index: 999
+	top: 0
+	right: 0
+	width: 81px
+	opacity: 0
+	transition: 0.8s opacity ease-in-out
+	&.display
+		opacity: 1
+
+.ls__wrapper
+	width: 100%
+	white-space: nowrap
+	overflow: hidden
+	position: relative
+	ul
+		font-size: 0
+
+.ls__dots
+	opacity: 0
+	transition: 0.8s opacity ease-in-out
+
+	&.display
+		opacity: 1

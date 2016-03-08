@@ -1,0 +1,80 @@
+// -------------------------------------
+//   Row Height Calculator
+// -------------------------------------
+
+@function setRowHeight($height)
+	@return ($height / 16)* 100%
+
+// -------------------------------------
+//   Row Structure Builder
+// -------------------------------------
+
+//$mapRowStructureBuilder:(brick1L: $value1, brick1M: $value2, brick2L: $value3, brick2M: $value4, brick3L: $value5, brick3M: $value6)
+=rowStructureBuilder ($mapRowStructureBuilder, $colums:16)
+	$br1L : map-get($mapRowStructureBuilder,brick1L)
+	$br1M : map-get($mapRowStructureBuilder,brick1M)
+	$br2L : map-get($mapRowStructureBuilder,brick2L)
+	$br2M : map-get($mapRowStructureBuilder,brick2M)
+	$br3L : map-get($mapRowStructureBuilder,brick3L)
+	$br3M : map-get($mapRowStructureBuilder,brick3M)
+	$case1 : false
+	$case2 : false
+	@if ( $br1M == $colums )
+		$case1 : true
+	@else
+		$case2 : true
+	&.i1
+		+span($colums)
+		+breakpoint($m)
+			+span($br1M)
+		+breakpoint($l)
+			+span($br1L)
+		.no-mediaqueries &
+			+span($br1L)
+	&.i2
+		@if map-has-key($mapRowStructureBuilder, brick2M) or map-has-key($mapRowStructureBuilder, brick2M)
+			+span($colums)
+			+breakpoint($m)
+				@if map-has-key($mapRowStructureBuilder, brick2M)
+					+span($br2M)
+					@if $case1
+						top: 50%
+					@if $case2
+						top: 0
+						right: 0
+			+breakpoint($l)
+				@if map-has-key($mapRowStructureBuilder, brick2L)
+					+span($br2L)
+					@if $br3L
+						right: span($br3L)
+					@else
+						right: 0
+					top: 0
+			.no-mediaqueries &
+				@if map-has-key($mapRowStructureBuilder, brick2L)
+					+span($br2L)
+					@if $br3L
+						right: span($br3L)
+					@else
+						right: 0
+					top: 0
+	&.i3
+		@if map-has-key($mapRowStructureBuilder, brick3M) or map-has-key($mapRowStructureBuilder, brick3M)
+			+span($colums)
+			+breakpoint($m)
+				@if map-has-key($mapRowStructureBuilder, brick3M)
+					+span($br3M)
+					@if $case1
+						top: 50%
+					@if $case2
+						top: 50%
+					right: 0
+			+breakpoint($l)
+				@if map-has-key($mapRowStructureBuilder, brick3L)
+					+span($br3L)
+					top: 0
+			.no-mediaqueries &
+				+span($br3L)
+				top: 0
+				right: 0
+

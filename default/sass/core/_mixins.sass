@@ -1,0 +1,166 @@
+// -------------------------------------
+//   Extends
+// -------------------------------------
+
+// ----- Debug ----- //
+
+%debug
+	background-color: pink !important
+
+// ----- Ellipsis ----- //
+
+%ellipsis
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+// ----- Clearfix ----- //
+%clearfix
+	&:after
+		visibility: hidden
+		display: block
+		font-size: 0
+		content: ""
+		clear: both
+		height: 0
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// ----- rem ----- //
+
+@function rem($size)
+	@return #{$size / $base-fontSize}rem
+	// @return #{$size}px // ie 8 fix
+
+// -------------------------------------
+//   black with opacity
+// -------------------------------------
+
+@function setDarkness($value)
+	@return hsla(0, 0, 0, $value)
+
+
+// -------------------------------------
+//   vertical allign
+// -------------------------------------
+
+=verticalAllign()
+	// TODO: @Karan needs to be checked
+	display: table
+	>
+		display: table-cell
+		vertical-align: middle
+
+=vertical-center
+	display: block
+	&:before
+		content: ''
+		display: inline-block
+		height: 100%
+		vertical-align: middle
+		//margin-right: -0.25em
+
+	.brick__alignVerticalCenter
+		width: 97%
+		+breakpoint($m)
+			width: 97%
+		+breakpoint($l)
+			width: 97%
+		+breakpoint($xl)
+			width: 98%
+		display: inline-block
+		vertical-align: middle
+
+
+//font Extends
+%font-sans-regular
+	font-family: $font-sans-normal
+	&:lang(ru-RU)
+		font-family: $font-sans-russian
+		font-weight: 300
+	&:lang(ja)
+		font-family: $font-sans-japan
+		font-weight: 300
+
+%font-sans-semibold
+	font-family: $font-sans-semibold
+	&:lang(ru-RU)
+		font-family: $font-sans-russian
+		font-weight: 300
+	&:lang(ja)
+		font-family: $font-sans-japan
+		font-weight: 300
+
+%font-sans-bold
+	font-family: $font-sans-bold
+	&:lang(ru-RU)
+		font-family: $font-sans-russian
+		font-weight: 700
+	&:lang(ja)
+		font-family: $font-sans-japan
+		font-weight: 700
+
+
+%font-serif-regular
+	font-family: $font-serif-normal
+	&:lang(ru-RU)
+		font-family: $font-serif-russian
+		font-weight: 300
+	&:lang(ja)
+		font-family: $font-serif-japan
+		font-weight: 300
+
+%font-serif-semiBold
+	font-family: $font-serif-semiBold
+	&:lang(ru-RU)
+		font-family: $font-serif-russian
+		font-weight: 500
+	&:lang(ja)
+		font-family: $font-serif-japan
+		font-weight: 300
+
+%font-serif-bold
+	font-family: $font-serif-bold
+	&:lang(ru-RU)
+		font-family: $font-serif-russian
+		font-weight: 700
+	&:lang(ja)
+		font-family: $font-serif-japan
+		font-weight: 700
+
+//mixin button
+
+=button($bgColor, $bgColorHover, $textColor, $textColorHover)
+	position: relative
+	color: $textColor
+	background: $bgColor
+	>span
+		position: relative
+		z-index: 2
+	.touch &
+		&:after
+			display: none
+	&:after
+		transition: all .2s $ease-in-out-quad
+		content: ''
+		position: absolute
+		z-index: -1
+		width: 100%
+		height: 0
+		bottom: 0
+		left: 0
+		background: $bgColorHover
+		opacity: 0
+
+	&:hover
+		color: $textColorHover
+		.touch &
+			color: $textColor
+		&:after
+			opacity: 1
+			height: 100%
+			z-index: 1
+			.touch &
+				display: none
