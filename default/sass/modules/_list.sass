@@ -10,17 +10,21 @@
 		float: none
 		+clearfix
 
-	.catalog-category-view .col3-layout .col-wrapper
+	.col3-layout .col-wrapper .col-main
+		padding: 0
 		position: relative
 
 	.category-title
 		width: 100%
 		height: 130px
 		background: #fff url(../images/demo/list/canvas.jpg) right top no-repeat
-		background-size: 100%
+		background-size: 75%
 		padding-left: 25%
 		h1
 			width: 25%
 			float: left
 			line-height: 130px
+			position: absolute
+			left: 0
+			@extend %font-sans-semibold
 

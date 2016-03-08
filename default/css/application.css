@@ -44,6 +44,15 @@ table {
 button {
   outline: none; }
 
+.catalog-category-view .category-title h1 {
+  font-family: "Museo Sans W01 500"; }
+  .catalog-category-view .category-title h1:lang(ru-RU) {
+    font-family: "Arial";
+    font-weight: 300; }
+  .catalog-category-view .category-title h1:lang(ja) {
+    font-family: sans-serif;
+    font-weight: 300; }
+
 html {
   background: #252525; }
 
@@ -91,15 +100,17 @@ body {
     display: table; }
   .catalog-category-view .col3-layout .col-wrapper .col-main:after {
     clear: both; }
-.catalog-category-view .catalog-category-view .col3-layout .col-wrapper {
+.catalog-category-view .col3-layout .col-wrapper {
   position: relative; }
 .catalog-category-view .category-title {
   width: 100%;
   height: 130px;
   background: #fff url(../images/demo/list/canvas.jpg) right top no-repeat;
-  background-size: 100%;
+  background-size: 75%;
   padding-left: 25%; }
   .catalog-category-view .category-title h1 {
     width: 25%;
     float: left;
-    line-height: 130px; }
+    line-height: 130px;
+    position: absolute;
+    left: 0; }
