@@ -30,6 +30,35 @@
 			padding-left: 15px
 			@extend %font-sans-semibold
 
+	.products-grid
+		padding: 20px
+
+		.product-image
+			border: none
+
+		.actions
+			display: none
+
+		.product-name
+			@extend %font-sans-bold
+			color: $napaBlack
+			a
+				color: $napaBlack
+				font-size: 20px
+
+
+	.price-box .price, .price
+		@extend %font-serif-regular
+		color: #87001e
+		font-size: 12px
+
+	.products-grid--max-4-col > li
+		margin-right: 0
+		width: 25%
+
+	.products-grid--max-4-col > li:nth-child(even)
+		margin-right: 0
+
 
 
 	// toolbar
@@ -44,3 +73,10 @@
 
 		.sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid, .sorter > .view-mode .list
 			vertical-align: middle
+			display: inline-block
+			float: none
+			margin: 0
+
+		.pager > .count-container
+			margin-top: 10px
+

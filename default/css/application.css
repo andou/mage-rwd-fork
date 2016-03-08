@@ -63,6 +63,24 @@ button {
     font-family: sans-serif;
     font-weight: 300; }
 
+.catalog-category-view .products-grid .product-name {
+  font-family: "Museo Sans W01 700"; }
+  .catalog-category-view .products-grid .product-name:lang(ru-RU) {
+    font-family: "Arial";
+    font-weight: 700; }
+  .catalog-category-view .products-grid .product-name:lang(ja) {
+    font-family: sans-serif;
+    font-weight: 700; }
+
+.catalog-category-view .price-box .price, .catalog-category-view .price {
+  font-family: "Museo Slab W01 300"; }
+  .catalog-category-view .price:lang(ru-RU) {
+    font-family: "PMNCaeciliaETW10-Roman";
+    font-weight: 300; }
+  .catalog-category-view .price:lang(ja) {
+    font-family: sans-serif;
+    font-weight: 300; }
+
 @font-face {
   font-family: "Museo Sans W01 300";
   src: url("Fonts/fd479df2-01b0-4e3a-a411-915c477f1352.eot?#iefix");
@@ -169,6 +187,25 @@ body {
     position: absolute;
     left: 0;
     padding-left: 15px; }
+.catalog-category-view .products-grid {
+  padding: 20px; }
+  .catalog-category-view .products-grid .product-image {
+    border: none; }
+  .catalog-category-view .products-grid .actions {
+    display: none; }
+  .catalog-category-view .products-grid .product-name {
+    color: #212121; }
+    .catalog-category-view .products-grid .product-name a {
+      color: #212121;
+      font-size: 20px; }
+.catalog-category-view .price-box .price, .catalog-category-view .price {
+  color: #87001e;
+  font-size: 12px; }
+.catalog-category-view .products-grid--max-4-col > li {
+  margin-right: 0;
+  width: 25%; }
+.catalog-category-view .products-grid--max-4-col > li:nth-child(even) {
+  margin-right: 0; }
 .catalog-category-view .toolbar {
   margin: 0;
   border: 0;
@@ -178,4 +215,9 @@ body {
   padding: 0 15px;
   color: #363636; }
   .catalog-category-view .toolbar .sorter > .sort-by .sort-by-switcher, .catalog-category-view .toolbar .sorter > .view-mode .grid, .catalog-category-view .toolbar .sorter > .view-mode .list {
-    vertical-align: middle; }
+    vertical-align: middle;
+    display: inline-block;
+    float: none;
+    margin: 0; }
+  .catalog-category-view .toolbar .pager > .count-container {
+    margin-top: 10px; }
