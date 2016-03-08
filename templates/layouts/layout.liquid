@@ -1,0 +1,44 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10 " lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <!-- Title block allowing child pages to override -->
+        <title>{% block title %}GeometriCam{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+		<!-- smart app banner -->
+        <meta name="apple-itunes-app" content="app-id=1059442774">
+		<!-- smart app banner -->
+
+        <meta name="description" content="GeometriCam uses the iPhone camera as a live video source to generate stylish geometric compositions in real-time.">
+        <meta name="keywords" content="krapoz, abstract, geometric, design, video, op, pixel, generative, art, pattern, mosaic, poly, selfie, wallpaper">
+
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+        <!-- Styles -->
+        {{ "vendor/modernizr.min.js" | asset_url | script_tag }}
+        {{ "application.css" | asset_url | stylesheet_tag }}
+
+				<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+				<link href='https://fonts.googleapis.com/css?family=PT+Serif:400italic' rel='stylesheet' type='text/css'>
+
+				<link href='https://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css'>
+
+
+        <!-- Style block allowing child pages to inject their own styles -->
+        {% block styles %}{% endblock %}
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Include -->
+            {% block content %}{% endblock %}
+            {% include "footer" %}
+        </div>
+        <!-- Script block allowing child pages to inject their own scripts -->
+        {% include "script" %}
+    </body>
+</html>
