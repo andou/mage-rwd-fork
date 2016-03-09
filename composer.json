@@ -1,0 +1,18 @@
+{
+	"name": "bitmama/napapijri-magento-skin",
+	"description": "Magento Napapijri skin",
+	"type": "magento-skin",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Antonio Pastorino",
+			"email": "a.pastorino@bitmama.it"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "bitmama-napapijri"
+	}
+}
