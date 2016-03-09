@@ -198,6 +198,9 @@ body {
     .catalog-category-view .products-grid .product-name a {
       color: #212121;
       font-size: 20px; }
+.catalog-category-view .product-info {
+  min-height: 0 !important;
+  padding-bottom: 0 !important; }
 .catalog-category-view .price-box .price, .catalog-category-view .price {
   color: #87001e;
   font-size: 12px; }
@@ -219,5 +222,14 @@ body {
     display: inline-block;
     float: none;
     margin: 0; }
+  .catalog-category-view .toolbar .pager {
+    display: none; }
+  .catalog-category-view .toolbar .sorter > .view-mode {
+    float: right; }
+    .catalog-category-view .toolbar .sorter > .view-mode .list {
+      display: none; }
   .catalog-category-view .toolbar .pager > .count-container {
     margin-top: 10px; }
+
+.toolbar-bottom {
+  display: none; }
