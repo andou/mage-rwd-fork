@@ -25,20 +25,30 @@
 		background-size: 100%
 		padding-left: 25%
 		display: none
-		+breakpoint(770px)
-			display: block
-		h1
-			width: 25%
-			float: left
-			line-height: 130px
+
+		&:before
+			content: ""
 			position: absolute
 			background: #fff
 			left: 0
+			bottom: 0
+			height: 100%
+			margin: 0
+			width: 25%
+
+		+breakpoint(770px)
+			display: block
+		h1
 			padding-left: 15px
+			vertical-align: middle
+			display: inline-block
+			padding-top: 9%
+			line-height: 1em
+
 			@extend %font-sans-semibold
 
 	.products-grid
-		padding: 20px
+		padding: 0
 
 		.product-image
 			border: none
@@ -63,11 +73,50 @@
 		font-size: 12px
 
 	.products-grid--max-4-col > li
-		margin-right: 0
-		width: 25%
 
-	.products-grid--max-4-col > li:nth-child(even)
+
 		margin-right: 0
+
+		width: 50%
+
+		+breakpoint(480px)
+			width: 33%
+
+		+breakpoint(770px)
+			width: 25%
+
+
+.products-grid > li:nth-child(3n+1)
+
+	+breakpoint(480px)
+		clear: left
+	+breakpoint(770px)
+		clear: none
+	+breakpoint(960px)
+		clear: none
+
+
+.products-grid > li:nth-child(2n+1)
+	clear: left
+	+breakpoint(480px)
+		clear: none
+	+breakpoint(770px)
+		clear: none
+	+breakpoint(960px)
+		clear: none
+
+.products-grid > li:nth-child(4n+1)
+	clear: none
+	+breakpoint(480px)
+		clear: none
+	+breakpoint(770px)
+		clear: left
+	+breakpoint(960px)
+		clear: none
+
+
+	// .products-grid--max-4-col > li:nth-child(even)
+	// 	margin-right: 0
 
 
 

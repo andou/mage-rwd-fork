@@ -198,19 +198,26 @@ body {
   background-size: 100%;
   padding-left: 25%;
   display: none; }
+  .catalog-category-view .category-title:before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    margin: 0;
+    width: 25%; }
   @media (min-width: 770px) {
     .catalog-category-view .category-title {
       display: block; } }
   .catalog-category-view .category-title h1 {
-    width: 25%;
-    float: left;
-    line-height: 130px;
-    position: absolute;
-    background: #fff;
-    left: 0;
-    padding-left: 15px; }
+    padding-left: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    padding-top: 9%;
+    line-height: 1em; }
 .catalog-category-view .products-grid {
-  padding: 20px; }
+  padding: 0; }
   .catalog-category-view .products-grid .product-image {
     border: none; }
   .catalog-category-view .products-grid .actions {
@@ -228,33 +235,71 @@ body {
   font-size: 12px; }
 .catalog-category-view .products-grid--max-4-col > li {
   margin-right: 0;
-  width: 25%; }
-.catalog-category-view .products-grid--max-4-col > li:nth-child(even) {
-  margin-right: 0; }
-.catalog-category-view .toolbar {
-  margin: 0;
-  border: 0;
-  background: #EFEFEF;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 15px;
-  color: #363636; }
-  .catalog-category-view .toolbar .sorter > .sort-by .sort-by-switcher, .catalog-category-view .toolbar .sorter > .view-mode .grid, .catalog-category-view .toolbar .sorter > .view-mode .list {
-    vertical-align: middle;
-    display: inline-block;
-    float: none;
-    margin: 0; }
-  .catalog-category-view .toolbar .pager {
-    display: none; }
-  .catalog-category-view .toolbar .sorter {
-    width: 100%; }
-    .catalog-category-view .toolbar .sorter > .view-mode {
+  width: 50%; }
+  @media (min-width: 480px) {
+    .catalog-category-view .products-grid--max-4-col > li {
+      width: 33%; } }
+  @media (min-width: 770px) {
+    .catalog-category-view .products-grid--max-4-col > li {
+      width: 25%; } }
+
+@media (min-width: 480px) {
+  .products-grid > li:nth-child(3n+1) {
+    clear: left; } }
+@media (min-width: 770px) {
+  .products-grid > li:nth-child(3n+1) {
+    clear: none; } }
+@media (min-width: 960px) {
+  .products-grid > li:nth-child(3n+1) {
+    clear: none; } }
+
+.products-grid > li:nth-child(2n+1) {
+  clear: left; }
+  @media (min-width: 480px) {
+    .products-grid > li:nth-child(2n+1) {
+      clear: none; } }
+  @media (min-width: 770px) {
+    .products-grid > li:nth-child(2n+1) {
+      clear: none; } }
+  @media (min-width: 960px) {
+    .products-grid > li:nth-child(2n+1) {
+      clear: none; } }
+
+.products-grid > li:nth-child(4n+1) {
+  clear: none; }
+  @media (min-width: 480px) {
+    .products-grid > li:nth-child(4n+1) {
+      clear: none; } }
+  @media (min-width: 770px) {
+    .products-grid > li:nth-child(4n+1) {
+      clear: left; } }
+  @media (min-width: 960px) {
+    .products-grid > li:nth-child(4n+1) {
+      clear: none; } }
+  .products-grid > li:nth-child(4n+1) .toolbar {
+    margin: 0;
+    border: 0;
+    background: #EFEFEF;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    color: #363636; }
+    .products-grid > li:nth-child(4n+1) .toolbar .sorter > .sort-by .sort-by-switcher, .products-grid > li:nth-child(4n+1) .toolbar .sorter > .view-mode .grid, .products-grid > li:nth-child(4n+1) .toolbar .sorter > .view-mode .list {
+      vertical-align: middle;
+      display: inline-block;
+      float: none;
+      margin: 0; }
+    .products-grid > li:nth-child(4n+1) .toolbar .pager {
       display: none; }
-    .catalog-category-view .toolbar .sorter > .sort-by {
-      float: right;
-      height: 50px; }
-  .catalog-category-view .toolbar .pager > .count-container {
-    margin-top: 10px; }
+    .products-grid > li:nth-child(4n+1) .toolbar .sorter {
+      width: 100%; }
+      .products-grid > li:nth-child(4n+1) .toolbar .sorter > .view-mode {
+        display: none; }
+      .products-grid > li:nth-child(4n+1) .toolbar .sorter > .sort-by {
+        float: right;
+        height: 50px; }
+    .products-grid > li:nth-child(4n+1) .toolbar .pager > .count-container {
+      margin-top: 10px; }
 
 .toolbar-bottom {
   display: none; }
