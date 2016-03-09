@@ -4,6 +4,23 @@ var bp = 1152;
 var win = $(window)
 var iconMenu = $('.iconMenu');
 var menu = $('.menu');
+var footerMenu = $('.footer-menu');
+
+for(var i=0;i<footerMenu.length;i++){
+	_footerMenu = $(footerMenu[i]);
+	_footerMenu.click(function(e){
+		e.preventDefault();
+		_fm = $(e.currentTarget);
+		menuList = _fm.find('.footer-menu-list');
+		if(_fm.hasClass('opened')){
+			_fm.removeClass('opened');
+			menuList.css({'max-height':'0px'})
+		}else{
+		_fm.addClass('opened')
+		menuList.css({'max-height':'3000px'})
+		}
+	})
+}
 win.resize(function(){
 	if(menu.hasClass('opened')){menu.removeClass('opened');}
 	if(win.width()>bp){
