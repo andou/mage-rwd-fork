@@ -38,8 +38,23 @@ body
 	z-index: 1
 
 
+.main-container, .footer-container
+	max-width: 1216px
+	padding: 0
+	background: #fff
+
+.wrapper
+	max-width: 1216px
+	padding: 0 32px
+	background: #252525
+
+
 .breadcrumbs
 	margin: 0
+	display: block
+
+	+breakpoint(770px)
+		display: block
 
 	background: #005187
 	@extend %font-sans-regular
