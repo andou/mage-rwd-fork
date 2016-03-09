@@ -23,7 +23,7 @@
 		position: relative
 		background: #fff url(../images/demo/list/canvas.jpg) right top no-repeat
 		background-size: 100%
-		padding-left: 25%
+		padding-left: 0
 		display: none
 
 		&:before
@@ -42,8 +42,10 @@
 			padding-left: 15px
 			vertical-align: middle
 			display: inline-block
-			padding-top: 9%
+			padding-top: 7%
 			line-height: 1em
+			position: relative
+			margin: 0
 
 			@extend %font-sans-semibold
 
@@ -120,39 +122,39 @@
 
 
 
-	// toolbar
-	.toolbar
+// toolbar
+.toolbar
+	margin: 0
+	border: 0
+	background: #EFEFEF
+	height: 50px
+	line-height: 50px
+	padding: 0 15px
+	color: #363636
+
+	.sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid, .sorter > .view-mode .list
+		vertical-align: middle
+		display: inline-block
+		float: none
 		margin: 0
-		border: 0
-		background: #EFEFEF
-		height: 50px
-		line-height: 50px
-		padding: 0 15px
-		color: #363636
-
-		.sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid, .sorter > .view-mode .list
-			vertical-align: middle
-			display: inline-block
-			float: none
-			margin: 0
 
 
 
-		.pager
+	.pager
+		display: none
+
+	.sorter
+		width: 100%
+
+		>.view-mode
 			display: none
 
-		.sorter
-			width: 100%
+		> .sort-by
+			float: right
+			height: 50px
 
-			>.view-mode
-				display: none
-
-			> .sort-by
-				float: right
-				height: 50px
-
-		.pager > .count-container
-			margin-top: 10px
+	.pager > .count-container
+		margin-top: 10px
 
 .toolbar-bottom
 	display: none
