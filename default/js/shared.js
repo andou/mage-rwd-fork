@@ -5,6 +5,40 @@ var win = $(window)
 var iconMenu = $('.iconMenu');
 var menu = $('.menu');
 var footerMenu = $('.footer-menu');
+var language_btn = $('[data-action="toggle_toolLayer_cyc"]');
+var service_btn = $('[data-action="toggle_toolLayer_customerservice"]');
+var wrapper = $('.toolLayers_wrapper');
+var language_panel = wrapper.find('.cyc');
+var service_panel = wrapper.find('.customerservice');
+
+
+language_btn.click(function(e){
+	e.preventDefault();
+	if(language_panel.hasClass('opened')){
+		wrapper.removeClass('wrapper—open');
+		language_panel.removeClass('opened');
+	}else{
+		wrapper.addClass('wrapper—open');
+		language_panel.addClass('opened');
+		if(service_panel.hasClass('opened')){
+			service_panel.removeClass('opened');
+		}
+	}
+})
+
+service_btn.click(function(e){
+	e.preventDefault();
+	if(service_panel.hasClass('opened')){
+		wrapper.removeClass('wrapper—open');
+		service_panel.removeClass('opened');
+	}else{
+		wrapper.addClass('wrapper—open');
+		service_panel.addClass('opened');
+		if(language_panel.hasClass('opened')){
+			language_panel.removeClass('opened');
+		}
+	}
+})
 
 for(var i=0;i<footerMenu.length;i++){
 	_footerMenu = $(footerMenu[i]);
